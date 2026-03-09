@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortoise Adoption Application | Sanctuary Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;500;700&display=swap');
+        
+        :root {
+            --farm-green: #3E5641;
+            --clay: #A45D41;
+            --soft-sand: #FDFBF7;
+        }
+
+        h1, h2, h3, h4, h5 { font-family: 'Crimson Pro', serif; }
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: var(--soft-sand); 
+            color: #1B261D;
+            line-height: 1.6;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 10px 40px rgba(62, 86, 65, 0.08);
+            border: 1px solid rgba(62, 86, 65, 0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: var(--farm-green);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .form-section {
+            padding: 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--farm-green);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-title span {
+            background: var(--clay);
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1rem;
+            font-family: sans-serif;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--clay);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(164, 93, 65, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 8px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--clay);
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: var(--clay);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 99px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--farm-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .confirmation-box {
+            background: var(--farm-green);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="section-header">
+        <h1 class="text-4xl font-bold mb-2">Application for Adoption</h1>
+        <p class="text-soft-sand/80 italic">Step towards becoming a lifelong tortoise steward.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xbdzdpnp" method="POST">
+        <!-- 1. Personal Information -->
+        <div class="form-section">
+            <h2 class="form-title"><span>1</span> Personal Information</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="input-group">
+                    <label>Street Address</label>
+                    <input type="text" name="address" required>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>City</label>
+                    <input type="text" name="city" required>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label>State / Province</label>
+                        <input type="text" name="state" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Zip / Postal Code</label>
+                        <input type="text" name="zip" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2 mt-4">
+                <div class="input-group">
+                    <label>Are you at least 18 years old?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="over_18" value="yes" required> Yes</label>
+                        <label class="radio-item"><input type="radio" name="over_18" value="no"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Residence Type</label>
+                    <select name="residence_type">
+                        <option value="house">House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="condo">Condo</option>
+                        <option value="farm">Farm/Ranch</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Home Ownership</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="ownership" value="own" required> I own my home</label>
+                    <label class="radio-item"><input type="radio" name="ownership" value="rent"> I rent my home</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Tortoise Preference -->
+        <div class="form-section">
+            <h2 class="form-title"><span>2</span> Tortoise Preference</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Which tortoise species are you interested in?</label>
+                    <select name="species">
+                        <option>African Sulcata Tortoise</option>
+                        <option>Hermann’s Tortoise</option>
+                        <option>Russian Tortoise</option>
+                        <option>Marginated Tortoise</option>
+                        <option>Greek Tortoise</option>
+                        <option>Leopard Tortoise</option>
+                        <option>Other / Not sure yet</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Preferred size or age</label>
+                    <select name="age_preference">
+                        <option>Hatchling</option>
+                        <option>Juvenile</option>
+                        <option>Adult</option>
+                        <option>No preference</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>How many tortoises are you interested in adopting?</label>
+                <input type="number" name="quantity" min="1" placeholder="1" class="w-32">
+            </div>
+        </div>
+
+        <!-- 3. Experience -->
+        <div class="form-section">
+            <h2 class="form-title"><span>3</span> Experience With Tortoises</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Do you currently own a tortoise?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="owns_now" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="owns_now" value="no"> No</label>
+                    </div>
+                    <input type="text" name="current_species" placeholder="If yes, please list the species" class="mt-2">
+                </div>
+                <div class="input-group">
+                    <label>Have you owned a tortoise before?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="owned_before" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="owned_before" value="no"> No</label>
+                    </div>
+                    <input type="text" name="past_species" placeholder="If yes, what species?" class="mt-2">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>What made you interested in adopting a tortoise?</label>
+                <textarea name="interest_reason" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- 4. Household & Pets -->
+        <div class="form-section">
+            <h2 class="form-title"><span>4</span> Household & Pets</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Are there children living in your household?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="children" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="children" value="no"> No</label>
+                    </div>
+                    <input type="text" name="children_ages" placeholder="If yes, list ages" class="mt-2">
+                </div>
+                <div class="input-group">
+                    <label>Do you have other pets?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="other_pets" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="other_pets" value="no"> No</label>
+                    </div>
+                    <input type="text" name="pet_list" placeholder="If yes, list them" class="mt-2">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Can your other pets be separated from the tortoise if needed?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="separation" value="yes"> Yes</label>
+                    <label class="radio-item"><input type="radio" name="separation" value="no"> No</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Habitat Information -->
+        <div class="form-section">
+            <h2 class="form-title"><span>5</span> Habitat Information</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Where will the tortoise primarily live?</label>
+                    <select name="habitat_type">
+                        <option>Outdoor enclosure</option>
+                        <option>Indoor enclosure</option>
+                        <option>Both indoor and outdoor</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Estimated size of the enclosure</label>
+                    <input type="text" name="enclosure_size" placeholder="e.g. 10' x 10'">
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="input-group">
+                    <label>Do you have a fenced yard or enclosed area?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="fenced" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="fenced" value="no"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Swimming pool, pond, or water feature?</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="pool" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="pool" value="no"> No</label>
+                    </div>
+                    <label class="radio-item mt-2 italic text-xs">
+                        <input type="checkbox" name="pool_secured"> If yes, is it secured to prevent access?
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-6 p-6 bg-gray-50 rounded-2xl">
+                <label class="mb-4 block text-farm-green font-bold">Will the tortoise have access to:</label>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase block opacity-50">Sunlight</span>
+                        <div class="flex gap-4">
+                            <label class="text-xs"><input type="radio" name="sunlight" value="y"> Y</label>
+                            <label class="text-xs"><input type="radio" name="sunlight" value="n"> N</label>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase block opacity-50">Shade</span>
+                        <div class="flex gap-4">
+                            <label class="text-xs"><input type="radio" name="shade" value="y"> Y</label>
+                            <label class="text-xs"><input type="radio" name="shade" value="n"> N</label>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase block opacity-50">Clean Water</span>
+                        <div class="flex gap-4">
+                            <label class="text-xs"><input type="radio" name="water" value="y"> Y</label>
+                            <label class="text-xs"><input type="radio" name="water" value="n"> N</label>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase block opacity-50">Natural Grasses</span>
+                        <div class="flex gap-4">
+                            <label class="text-xs"><input type="radio" name="grass" value="y"> Y</label>
+                            <label class="text-xs"><input type="radio" name="grass" value="n"> N</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Care Knowledge -->
+        <div class="form-section">
+            <h2 class="form-title"><span>6</span> Care Knowledge</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <span class="text-sm font-bold">Are you familiar with tortoise diet and feeding requirements?</span>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="know_diet" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="know_diet" value="no"> No</label>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <span class="text-sm font-bold">Have you read care information about the species you want to adopt?</span>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="know_species" value="yes"> Yes</label>
+                        <label class="radio-item"><input type="radio" name="know_species" value="no"> No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Applicant Confirmation -->
+        <div class="form-section">
+            <h2 class="form-title"><span>7</span> Applicant Confirmation</h2>
+            <div class="confirmation-box space-y-4">
+                <label class="flex items-start gap-3 normal-case text-white cursor-pointer font-normal">
+                    <input type="checkbox" name="c1" required class="mt-1">
+                    The information provided in this application is accurate.
+                </label>
+                <label class="flex items-start gap-3 normal-case text-white cursor-pointer font-normal">
+                    <input type="checkbox" name="c2" required class="mt-1">
+                    I understand that tortoises require proper housing, diet, and ongoing care.
+                </label>
+                <label class="flex items-start gap-3 normal-case text-white cursor-pointer font-normal">
+                    <input type="checkbox" name="c3" required class="mt-1">
+                    I agree not to sell, abandon, or release the tortoise into the wild.
+                </label>
+                <label class="flex items-start gap-3 normal-case text-white cursor-pointer font-normal">
+                    <input type="checkbox" name="c4" required class="mt-1">
+                    I understand that approval of this application is required before any adoption can proceed.
+                </label>
+            </div>
+        </div>
+
+        <div class="p-10 text-center space-y-4">
+            <button type="submit" class="submit-btn">Submit Application</button>
+            <p class="text-xs text-gray-500 max-w-sm mx-auto">
+                After submission, our team will review your application and contact you regarding availability and next steps.
+            </p>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
