@@ -312,7 +312,114 @@ They will be available for adoption after the 19th</p>
                 </div>
             </div>
         </section>
+        
+  <section id="ttar-single-registry" style="background-color: #0D0E0D; padding: 60px 24px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 400px; margin: 0 auto; position: relative;">
+        
+        <h2 style="color: #A47E53; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5em; text-align: center; margin-bottom: 30px; opacity: 0.6;">
+            Legal Registry
+        </h2>
 
+        <div class="ttar-slide-wrapper">
+            
+            <div class="ttar-slide ttar-animate-1">
+                <div class="ttar-box-inner">
+                    <img src="/images/permit.png" alt="Zoning Permit" class="ttar-cert-img">
+                    <div class="ttar-box-label">
+                        <span class="ttar-type">AMPHIBIAN AND REPTILE REHABILITATION PERMIT</span>
+                        <code class="ttar-id">REF: 2025-AR-0341</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ttar-slide ttar-animate-2">
+                <div class="ttar-box-inner">
+                    <img src="/images/esa-permit.png" alt="Wildlife Permit" class="ttar-cert-img">
+                    <div class="ttar-box-label">
+                        <span class="ttar-type">ENDANGERED SPECIES ACT PERMIT</span>
+                        <code class="ttar-id">REF: TE-56789-0</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ttar-slide ttar-animate-3">
+                <div class="ttar-box-inner">
+                    <img src="/images/cites-permit.png" alt="USDA Audit" class="ttar-cert-img">
+                    <div class="ttar-box-label">
+                        <span class="ttar-type">CITES PERMIT (INTERNATIONAL TRADE)</span>
+                        <code class="ttar-id">REF: US-0010A-26</code>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* SANDBOXED STYLES */
+    #ttar-single-registry .ttar-slide-wrapper {
+        position: relative;
+        height: 320px; /* Adjust based on your image height */
+        width: 100%;
+    }
+
+    #ttar-single-registry .ttar-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #ttar-single-registry .ttar-box-inner {
+        background: #141614;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    #ttar-single-registry .ttar-cert-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        filter: sepia(20%) contrast(1.1);
+    }
+
+    #ttar-single-registry .ttar-box-label {
+        padding: 8px;
+        border-top: 1px solid rgba(255,255,255,0.03);
+    }
+
+    #ttar-single-registry .ttar-type {
+        display: block;
+        font-size: 9px;
+        font-weight: 700;
+        color: #A47E53;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    #ttar-single-registry .ttar-id {
+        font-family: monospace;
+        font-size: 11px;
+        color: #E6DFD4;
+    }
+
+    /* THE 9-SECOND CYCLE (3s per box x 3 boxes) */
+    @keyframes ttar-fade-loop {
+        0%, 33.33% { opacity: 1; visibility: visible; }
+        33.34%, 100% { opacity: 0; visibility: hidden; }
+    }
+
+    .ttar-animate-1 { animation: ttar-fade-loop 9s infinite; animation-delay: 0s; }
+    .ttar-animate-2 { animation: ttar-fade-loop 9s infinite; animation-delay: 3s; }
+    .ttar-animate-3 { animation: ttar-fade-loop 9s infinite; animation-delay: 6s; }
+</style>
         <footer class="py-20 bg-soft-sand border-t border-farm-green/10 text-center">
             <div class="flex flex-col items-center gap-6">
                 <p class="text-sm font-bold text-farm-green uppercase tracking-widest">T.T.A.R. Farm Sanctuary</p>
@@ -393,6 +500,7 @@ They will be available for adoption after the 19th</p>
 </body>
 
 </html>
+
 
 
 
